@@ -6,13 +6,13 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 16:11:13 by mvautrot          #+#    #+#             */
-/*   Updated: 2022/12/01 13:02:33 by mvautrot         ###   ########.fr       */
+/*   Updated: 2022/12/01 16:09:46 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "get_next_line.h"
 
-/*int main(void)
+int main(void)
 {
 	int		fd;
 	char	*line;
@@ -28,9 +28,9 @@
         free(line); // si pa free le pointeur sera ecrase a chaque fois dans la boucle. tt malloc qui n est pas free  est  leak.
     }
     return (0);
-} */
+} 
 
-int    main(int argc, char **argv)
+/*int    main(int argc, char **argv)
 {
     int    fd;
     char    *readed;
@@ -48,4 +48,4 @@ int    main(int argc, char **argv)
             break ;
     }
     return (0);
-}
+}*/

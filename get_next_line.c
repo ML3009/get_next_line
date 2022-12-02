@@ -6,7 +6,7 @@
 /*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 14:31:13 by mvautrot          #+#    #+#             */
-/*   Updated: 2022/12/02 12:44:52 by ml               ###   ########.fr       */
+/*   Updated: 2022/12/02 12:59:19 by ml               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	*ft_read_line(int fd, char *line, char *buf)
 	}
 	if (ft_strchr(line, '\n'))
 	{	
-		buf = ft_last_line(line, buf);
+		buf = ft_getlast_line(line, buf);
 		line = ft_check_line(line);
 	}	
 	return (line);
@@ -80,7 +80,7 @@ char *ft_check_line(char *line)
     return (line);
 }
 
-char    *ft_last_line(char *line, char *buf)
+char    *ft_getlast_line(char *line, char *buf)
 {
     int i;
     int j;

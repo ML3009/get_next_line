@@ -3,50 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 14:31:17 by mvautrot          #+#    #+#             */
-/*   Updated: 2022/12/01 16:10:36 by mvautrot         ###   ########.fr       */
+/*   Updated: 2022/12/02 10:02:39 by ml               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t ft_strlen(char *str)
-{
-    size_t i;
-
-    i = 0;
-    while (str[i])
-        i++;
-    return (i);
-}
-
 char    *ft_strjoin(char *line, char *buf)
 {
     char    *tab;
-    size_t  i;
-    size_t  j;
+    char    *new;
+    int size;
+    int  i;
 
     i = 0;
-    j = 0;
-    tab = malloc (sizeof(char) * (ft_strlen((char *)line) + ft_strlen((char *)buf) + 1));
-    if(!tab)
-        return (NULL);
-    if (!line || !buf)
+    size = (ft_strlen(line) + ft_strlen(buf)) ;
+    tab = malloc (sizeof(char) * (size + 1));
+    new = tab;
+    if(!new)
         return (NULL);
     {
-        while(line[i])
+        while(line && line[i])
         {
             tab [i] = line[i];
             i++;
         }
-        while (buf[j])
+        while (*buf)
         {
-            tab[i + j] = buf[j];
-            j++;
+            tab[i] = *buf++;
+            i++;
         }
-        tab[i + j] = '\0';
+        tab[size] = '\0';
         free(line);
         return (tab);
     }   
@@ -54,17 +44,26 @@ char    *ft_strjoin(char *line, char *buf)
 
 char    *ft_strchr(char *line, int c)
 {
-    
     int  i;
+    
     i = 0;
-    printf("ok strchr");
     while (line[i] && (line[i] != (char)c))
     {
-        printf("i++\n");
         i++;
     }
     if (line[i] == (char)c)
             return ((char *)line + i);
     else
         return (NULL);
+}
+
+
+int ft_strlen(char *str)
+{
+    int i;
+
+    i = 0;
+    while (str && str[i])
+        i++;
+    return (i);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 16:11:13 by mvautrot          #+#    #+#             */
-/*   Updated: 2022/12/01 16:09:46 by mvautrot         ###   ########.fr       */
+/*   Updated: 2022/12/02 09:26:43 by ml               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main(void)
 	char	*line;
 
 	fd = 0;
-	fd = open("tests.txt", O_RDONLY);
+	fd = open("txt.txt", O_RDONLY);
 	while (1)
     {
         line = get_next_line(fd);

@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 14:31:10 by mvautrot          #+#    #+#             */
-/*   Updated: 2022/12/01 16:03:26 by mvautrot         ###   ########.fr       */
+/*   Updated: 2022/12/02 10:14:17 by ml               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-
-#ifndef BUFFER_SIZE 
-#  define BUFFER_SIZE 5
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 50
 #endif
 
 # include <sys/types.h>
@@ -28,9 +27,10 @@
 char    *get_next_line(int fd); 
 char    *ft_read_line(int fd, char *line, char *buf);
 char    *ft_check_line(char *line);
+char    *ft_last_line(char *line, char *buf);
 char    *ft_strjoin(char *line, char *buf);
 char    *ft_strchr(char *line, int c);
-size_t  ft_strlen(char *str);
+int ft_strlen(char *str);
 
 
 #endif

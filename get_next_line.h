@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/24 14:31:10 by mvautrot          #+#    #+#             */
-/*   Updated: 2022/12/02 12:59:09 by ml               ###   ########.fr       */
+/*   Created: 2022/12/05 09:14:54 by mvautrot          #+#    #+#             */
+/*   Updated: 2022/12/05 09:33:00 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,12 @@
 # include <stdio.h>
 # include <stdlib.h>
 
-char    *get_next_line(int fd); 
-char    *ft_read_line(int fd, char *line, char *buf);
-char    *ft_check_line(char *line);
-char    *ft_getlast_line(char *line, char *buf);
-char    *ft_strjoin(char *line, char *buf);
-char    *ft_strchr(char *line, int c);
-int ft_strlen(char *str);
-
+char	*get_next_line(int fd);
+char	*ft_read_line(int fd, char *line, char *buf);
+char	*ft_check_line(char *line);
+char	*ft_getlast_line(char *line, char *buf);
+char	*ft_strjoin(char *line, char *buf);
+char	*ft_strchr(char *line, int c);
+int		ft_strlen(char *str);
 
 #endif

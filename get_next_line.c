@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 09:14:36 by mvautrot          #+#    #+#             */
-/*   Updated: 2022/12/05 09:20:19 by mvautrot         ###   ########.fr       */
+/*   Updated: 2022/12/06 10:07:15 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,7 @@ char	*ft_read_line(int fd, char *line, char *buf)
 			return (NULL);
 	}
 	if (ft_strchr(line, '\n'))
-	{	
-		buf = ft_getlast_line(line, buf);
 		line = ft_check_line(line);
-	}	
 	return (line);
 }
 
@@ -61,24 +58,4 @@ char	*ft_check_line(char *line)
 	i++;
 	line [i] = '\0';
 	return (line);
-}
-
-char	*ft_getlast_line(char *line, char *buf)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (line[i] && line[i] != '\n')
-		i++;
-	i++;
-	j = 0;
-	while (line[i])
-	{
-		buf[j] = line[i];
-		i++;
-		j++;
-	}
-	buf[j] = '\0';
-	return (buf);
 }

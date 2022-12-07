@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 09:14:36 by mvautrot          #+#    #+#             */
-/*   Updated: 2022/12/06 10:07:15 by mvautrot         ###   ########.fr       */
+/*   Updated: 2022/12/07 09:00:05 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*get_next_line(int fd)
 	char		*line;
 
 	line = NULL;
-	if (fd < 0 || fd > 1024 || BUFFER_SIZE <= 0 || read(fd, buf, 0) == -1)
+	if (fd < 0 || fd > 1024 || BUFFER_SIZE <= 0)
 		return (NULL);
 	line = ft_read_line(fd, line, buf);
 	if (line[0] == '\0')
@@ -35,7 +35,7 @@ char	*ft_read_line(int fd, char *line, char *buf)
 
 	ret = 1;
 	line = ft_strjoin(line, buf);
-	while (ret != 0 && !ft_strchr(line, '\n'))
+	while (ret > 0 && !ft_strchr(line, '\n'))
 	{
 		ret = read(fd, buf, BUFFER_SIZE);
 		buf[ret] = '\0';

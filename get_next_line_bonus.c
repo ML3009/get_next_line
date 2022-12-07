@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/05 09:14:36 by mvautrot          #+#    #+#             */
-/*   Updated: 2022/12/07 10:56:13 by mvautrot         ###   ########.fr       */
+/*   Created: 2022/12/07 11:10:04 by mvautrot          #+#    #+#             */
+/*   Updated: 2022/12/07 11:53:52 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*get_next_line(int fd)
 {
-	static char	buf[BUFFER_SIZE + 1];
+	static char	buf[FOPEN_MAX][BUFFER_SIZE + 1];
 	char		*line;
 
 	line = NULL;
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || fd > FOPEN_MAX || BUFFER_SIZE <= 0)
 		return (NULL);
-	line = ft_read_line(fd, line, buf);
+	line = ft_read_line(fd, line, buf[fd]);
 	if (line[0] == '\0')
 	{
 		free(line);
